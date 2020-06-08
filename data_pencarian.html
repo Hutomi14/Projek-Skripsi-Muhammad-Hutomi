@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script type='text/javascript'>
+//<![CDATA[
+teks = "Aplikasi Deteksi Toko Online Asli atau Palsu Pada E-commerce";posisi = 0;
+function animasi_teks() {
+  document.title = teks.substring(posisi, teks.length) + teks.substring(0, posisi); posisi++;
+  if (posisi > teks.length) posisi = 0
+    window.setTimeout("animasi_teks()",200);
+}
+animasi_teks();
+//]]>
+</script> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Miss+Fajardose&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/aos.css">
+
+<link rel="stylesheet" href="css/ionicons.min.css">
+
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/jquery.timepicker.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+  tr .loh{
+    height: 120px;
+    /*padding: 0px;*/
+  }
+
+  td.details-control {
+    background: url('images/details_open.png') no-repeat center center;
+    cursor: pointer;
+  }
+  tr.shown td.details-control {
+    background: url('images/details_close.png') no-repeat center center;
+  }
+</style>
+</head>
+<body style="margin-top: -50px">
+ <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
+   <div class="container">
+     <a class="navbar-brand" href="index.php">Shop Checker</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="oi oi-menu"></span> Menu
+     </button>
+
+     <div class="collapse navbar-collapse" id="ftco-nav">
+       <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="index.php" class="nav-link">Beranda</a></li>
+        <li class="nav-item active"><a href="data_pencarian.html" class="nav-link">Data Pencarian</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">Tentang Aplikasi</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread">Data Pencarian</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-section ftco-wrap-about ftco-no-pb second" style="margin-top: -80px; margin-bottom: 10px">
+ <div class="container">
+  <table id="example" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th width="3%"></th>
+        <th>Keyword</th>
+        <th>Nama Produk</th>
+        <th>Nama Toko</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+        <th>Keyword</th>
+        <th>Nama Produk</th>
+        <th>Nama Toko</th>
+        <th>Status</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+</section>
+
+<footer>
+  <div class="col-md-12 text-center ftco-bg-dark" style="height: 50px; font-size: 14px;
+  background: #141313;">
+
+  <p style="padding-top:12px"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  </div>
+</footer>
+
+
+
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.timepicker.min.js"></script>
+<script src="js/scrollax.min.js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+<!-- <script src="js/google-map.js"></script> -->
+<script src="js/main.js"></script>
+
+<!-- table -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
+  <script src="admin/asset/js/jquery.min.js"></script>
+  <script src="admin/asset/js/plugins/jquery.datatables.min.js"></script>
+
+  <script>
+    /* Formatting function for row details - modify as you need */
+    function format ( d ) {
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+    '<tr>'+
+    '<td>Harga</td>'+
+    '<td>Rp '+parseInt(d.harga_produk/100000)+'</td>'+
+    '<td width="150px">Jumlah Produk</td>'+
+    '<td>'+d.jumlah_produk+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td>Produk Terjual</td>'+
+    '<td>'+d.produk_terjual+'</td>'+
+    '<td>Pemilik Toko</td>'+
+    '<td>'+d.pemilik_toko+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td>Rating Produk</td>'+
+    '<td>'+parseFloat(d.rating_produk).toFixed(1)+' ('+d.jumlah_penilai+' penilai)</td>'+
+    '<td>Lokasi Toko</td>'+
+    '<td width="420px">'+d.lokasi_toko+'</td>'+
+    '</tr>'+  
+    '<tr>'+
+    '<td rowspan="7"><img src="https://cf.shopee.co.id/file/'+d.gambar_produk+'" height="200px"></td>'+
+    '<td>Bintang 5 ('+d.bintang5+')</td>'+
+    '<td>Pengiriman</td>'+
+    '<td>'+d.pengiriman+'</td>'+
+    '</tr>'+  
+    '<tr>'+
+    '<td>Bintang 4 ('+d.bintang4+')</td>'+
+    '<td>Rating Toko</td>'+
+    '<td>'+parseFloat(d.rating_toko).toFixed(1)+' ('+parseInt(parseInt(d.rating_buruk) + parseInt(d.rating_normal) + parseInt(d.rating_baik))+' penilai)</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td>Bintang 3 ('+d.bintang3+')</td>'+
+    '<td>Rating Baik</td>'+
+    '<td>'+d.rating_baik+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td>Bintang 2 ('+d.bintang2+')</td>'+
+    '<td>Rating Normal</td>'+
+    '<td>'+d.rating_normal+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td>Bintang 1 ('+d.bintang1+')</td>'+
+    '<td>Rating Buruk</td>'+
+    '<td>'+d.rating_buruk+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td width = "250px">Rating dengan foto ('+d.ratingdgnfoto+')</td>'+
+    '<td>Follower</td>'+
+    '<td>'+d.follower+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td>Rating dengan text ('+d.ratingdgntext+')</td>'+
+    '<td>Following</td>'+
+    '<td>'+d.following+'</td>'+
+    '</tr>'+
+    '<tr>'+
+    '<td colspan="2"><a target="_blank" href="https://shopee.co.id/'+d.nama_produk.replace(/ /g, "-")+'-i.'+d.shopid+'.'+d.itemid+'">Kunjungi Produk</a></td>'+
+    '<td colspan="2"><a target="_blank" href="https://shopee.co.id/'+d.pemilik_toko+'">Kunjungi Toko</a></td>'+
+    '</tr>'+
+    '</table>';
+  }
+
+  $(document).ready(function() {
+    var table = $('#example').DataTable( {
+      "ajax": "modules/ambildatapencarian.php",
+      "columns": [
+      {
+        "className":      'details-control',
+        "orderable":      false,
+        "data":           null,
+        "defaultContent": ''
+      },
+      { "data": "keyword" },
+      { "data": "nama_produk" },
+      { "data": "nama_toko" },
+      { "data": "status" }
+      ],
+      "order": [[1, 'asc']]
+    } );
+
+    // Add event listener for opening and closing details
+    $('#example tbody').on('click', 'td.details-control', function () {
+      var tr = $(this).closest('tr');
+      console.log(tr);
+      var row = table.row( tr );
+      console.log(row);
+
+      if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+          }
+          else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+          }
+        } );
+  } );
+
+</script>
+
+</body>
+</html>
